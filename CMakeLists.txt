@@ -121,6 +121,24 @@ write_basic_package_version_file(src/glfw3ConfigVersion.cmake
 #--------------------------------------------------------------------
 add_subdirectory(src)
 
+option(USE_ANGLE "Use ANGLE for OpenGL ES support on macOS" OFF)
+set(ANGLE_PATH "" CACHE PATH "Path to the ANGLE directory")
+message(STATUS "USE_ANGLE is set to: ${USE_ANGLE}")
+message(STATUS "ANGLE_PATH is set to: ${ANGLE_PATH}")
+if (APPLE AND USE_ANGLE)
+    if(NOT EXISTS "${ANGLE_PATH}")
+        message(FATAL_ERROR "ANGLE_PATH is not set or the path does not exist!")
+    endif()
+
+    include_directories("${ANGLE_PATH}/include")
+    link_directories("${ANGLE_PATH}/out/Debug")
+
+    target_link_libraries(glfw PRIVATE
+        libEGL.dylib
+        libGLESv2.dylib
+    )
+endif()
+
 if (GLFW_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif()
