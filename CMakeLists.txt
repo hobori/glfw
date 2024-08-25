@@ -131,7 +131,7 @@ if (APPLE AND USE_ANGLE)
     endif()
 
     include_directories("${ANGLE_PATH}/include")
-    link_directories("${ANGLE_PATH}/out/Debug")
+    link_directories("${ANGLE_PATH}/out/${CMAKE_BUILD_TYPE}")
 
     target_link_libraries(glfw PRIVATE
         libEGL.dylib

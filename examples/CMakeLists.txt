@@ -34,6 +34,7 @@ add_executable(sharing WIN32 MACOSX_BUNDLE sharing.c ${ICON} ${GLAD_GL})
 add_executable(splitview WIN32 MACOSX_BUNDLE splitview.c ${ICON} ${GLAD_GL})
 add_executable(triangle-opengl WIN32 MACOSX_BUNDLE triangle-opengl.c ${ICON} ${GLAD_GL})
 add_executable(triangle-opengles WIN32 MACOSX_BUNDLE triangle-opengles.c ${ICON} ${GLAD_GLES2})
+add_executable(triangle-opengles3 WIN32 MACOSX_BUNDLE triangle-opengles3.c ${ICON} ${GLAD_GLES2})
 add_executable(wave WIN32 MACOSX_BUNDLE wave.c ${ICON} ${GLAD_GL})
 add_executable(windows WIN32 MACOSX_BUNDLE windows.c ${ICON} ${GLAD_GL})
 

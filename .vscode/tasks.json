@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+	{
+	    "label": "configure_macos_angle",
+	    "type": "shell",
+	    "command": "${workspaceFolder}/scripts/configure_macos_angle.sh",
+	    "args": [
+                "${env:HOME}/Desktop/dev/angle/angle"
+            ],
+	    "problemMatcher": [],
+	    "detail": "Run the custom configure script"
+	},
+        {
+            "label": "build_macos_angle",
+            "type": "shell",
+            "command": "${workspaceFolder}/scripts/build_macos_angle.sh",
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Run the custom build script"
+        }
+    ]
+}

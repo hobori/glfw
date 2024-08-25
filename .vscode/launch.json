@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug GLFW (macos)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/examples/triangle-opengles3.app/Contents/MacOS/triangle-opengles3",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "environment": [],
+            "externalConsole": false,
+            "preLaunchTask": "build_macos_angle",
+            "MIMode": "lldb",
+            "miDebuggerPath": "/usr/bin/lldb",
+            "setupCommands": [
+                {
+                    "text": "settings set target.process.run-args 0"
+                }
+            ],
+            "logging": {
+                "moduleLoad": false
+            }
+        }
+    ]
+}
